@@ -10,10 +10,10 @@ const getPokemon = asyncHandler(async (req, res) => {
 // GET pokemon by id
 // GET /pokemon/{id}
 const getOnePokemon = asyncHandler(async(req, res) => {
-    //const myObj = JSON.parse(jsonData);
     var id = Number(req.params.id);
     var pokemon = null;
 
+    // Deconstructs the json data to pull the specific data we want using the map method
     jsonData.results.map(function(data) {
         if (data.id === id) {
         pokemon = data;
@@ -23,7 +23,8 @@ const getOnePokemon = asyncHandler(async(req, res) => {
   res.send(pokemon);
     
 });
-//pokemonList.result.req.id 
+
+// Exports data to router
 module.exports = {
     getPokemon,
     getOnePokemon
