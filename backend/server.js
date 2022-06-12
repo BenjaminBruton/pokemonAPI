@@ -3,8 +3,14 @@ const port = process.env.PORT || 5000
 
 const app = express()
 
+// Trademark for legal purposes :)
+const tm = '\u2122';
+
 app.get('/', (req, res) => {
-    res.send("Please append '/pokemon' to see all 150 Pokemon or '/pokemon/{idhere}' to see a particular pokemon!");
+    res.send(`Please append '/pokemon' to see all 150 Pokemon${tm} or 
+    '/pokemon/{idhere}' to see a particular Pokemon${tm}! \n
+     Example: /pokemon/50 results in {"id":50,"name":"growlithe"}`);
+
 })
 
 app.use('/pokemon', require('./routes/pokeRoutes'))
