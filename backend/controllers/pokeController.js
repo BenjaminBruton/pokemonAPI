@@ -5,8 +5,10 @@ const jsonData = require('../data/data.json')
 // GET /pokemon
 const getPokemon = asyncHandler(async (req, res) => {
     res.status(200).json(jsonData);
-})
-//{ id: 1, name: "abra" }
+});
+
+// GET pokemon by id
+// GET /pokemon/{id}
 const getOnePokemon = asyncHandler(async(req, res) => {
     //const myObj = JSON.parse(jsonData);
     var id = Number(req.params.id);
@@ -18,7 +20,8 @@ const getOnePokemon = asyncHandler(async(req, res) => {
         };
   });
 
-  res.send({pokemon});
+  res.send(pokemon);
+    
 });
 //pokemonList.result.req.id 
 module.exports = {
